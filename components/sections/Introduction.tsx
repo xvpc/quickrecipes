@@ -39,7 +39,7 @@ export default function Introduction({ title, country, image, home }: Introducti
             className={`order-1 rounded overflow-hidden shadow ${matchSm ? "w-25" : ""} m-auto`}
             initial={{y: "100vh", opacity: 0}}
             animate={{y: 0, opacity: 1}}
-            transition={{duration: 0.6}}
+            transition={{duration: 1.1, delay: 1.9}}
             >
                 {
                     home ?
@@ -55,7 +55,7 @@ export default function Introduction({ title, country, image, home }: Introducti
                 className='fw-bold text-primary-emphasis'
                 initial={{y: "100vh", opacity: 0}}
                 animate={{y: 0, opacity: 1}}
-                transition={{duration: 0.8, delay: 0.7}}
+                transition={{duration: 0.6}}
                 >
                     {title || "Quick Recipes"}
                 </motion.h1>
@@ -63,7 +63,7 @@ export default function Introduction({ title, country, image, home }: Introducti
                 className='ps-0 ps-sm-2 fw-normal text-secondary text-truncate text-wrap fs-5 w-100'
                 initial={{opacity: 0}}
                 animate={{opacity: 1}}
-                transition={{duration: 1.8, delay: 1.5}}
+                transition={{duration: 1, delay: 0.8}}
                 >
                     {country || `Search for Recipes and Learn A lot of Cool Meals,
                     and Share them with others.`}
