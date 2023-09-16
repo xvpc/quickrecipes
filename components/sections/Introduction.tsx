@@ -39,11 +39,11 @@ export default function Introduction({ title, country, image, home }: Introducti
             className={`order-1 rounded overflow-hidden ${home ? "shadow-lg" : "shadow"} ${matchSm ? "w-25" : ""} m-auto`}
             initial={{y: "100vh", opacity: 0}}
             animate={{y: 0, opacity: 1}}
-            transition={{duration: 0.8, delay: 1.2}}
+            transition={{duration: 0.7, delay: 1}}
             >
                 {
                     home ?
-                    <ImageHolder img={iconImage} title={'recipe1.jpg'} /> :
+                    <ImageHolder img={iconImage} title={'recipe1.jpg'} network /> :
                     image ?
                     <ImageHolder img={image} title={title || 'Recipe image'} network /> :
                     <ImageHolder img={'/images/placeholder2.png'} title={title || 'image placeholder'} />
