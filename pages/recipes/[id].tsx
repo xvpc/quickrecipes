@@ -16,12 +16,18 @@ export default function InfoPage() {
     const router = useRouter();
     const [data, setData] = useState<any>(null)
 
-    const id = router.query?.id || null;
     
     // TODO: Fix this shit
     useEffect(() => {
+        const id = router.query?.id;
+        
+        let times = 1
+        console.log(`${id} => ${times}`)
+        times+=1
+        
         if(id){
             (async() => {
+                console.log(`${id} => ${times}`)
                 try{
                     const data = await getInfo({id: String(id)})
 
@@ -39,7 +45,7 @@ export default function InfoPage() {
                 }
             })()
         }
-    }, [])
+    }, [router])
     
     return (
         <Layout title=''>
