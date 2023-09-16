@@ -1,6 +1,6 @@
 ## Quick Recipes
 
-A simple non-profit web application that helps with searching for Recipes/meals for personal needs or sharing them with others, 
+A simple non-profit web application that help with searching for Recipes/meals for personal needs or sharing them with others, 
 It's made using [Themealdb](https://themealdb.com) API.
 
 
