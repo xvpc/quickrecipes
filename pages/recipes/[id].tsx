@@ -38,7 +38,7 @@ function InfoPage({ router }: { router : any}) {
                 }
             })()
         }
-    }, [router, id])
+    }, [])
     
     return (
         <Layout title=''>
