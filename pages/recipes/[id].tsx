@@ -1,7 +1,7 @@
 import React from 'react'
 
 // NextJs
-import { GetStaticPropsContext } from 'next'
+import { GetStaticPropsContext, GetServerSidePropsContext } from 'next'
 
 // Components
 import Layout from '@/components/Layout'
@@ -19,14 +19,14 @@ export default function InfoPage(props: { data: any }) {
     )
 }
 
-export async function getStaticPaths(){
-    return{
-        paths: [],
-        fallback: "blocking"
-    }
-}
+// export async function getStaticPaths(){
+//     return{
+//         paths: [],
+//         fallback: "blocking"
+//     }
+// }
 
-export async function getStaticProps(context: GetStaticPropsContext){
+export async function getServerSideProps(context: GetServerSidePropsContext){
     const id = context.params?.id as string;
 
     // 
