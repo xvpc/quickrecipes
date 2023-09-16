@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 // NextJs
 import { GetStaticPropsContext, GetServerSidePropsContext } from 'next'
-import { useRouter } from 'next/router'
+import { useRouter, withRouter } from 'next/router'
 
 // Components
 import Layout from '@/components/Layout'
@@ -11,12 +11,13 @@ import Info from '@/components/pages/Info'
 // Lib
 import getInfo from '@/lib/getInfo'
 
-export default function InfoPage() {
-    const router = useRouter();
+function InfoPage({ router }: { router : any}) {
+    // const router = useRouter();
     const [data, setData] = useState<any>(null)
 
-    const id = router.query?.id || "";
+    const id = router.query?.id || null;
     
+    // TODO: Fix this shit
     useEffect(() => {
         if(id){
             (async() => {
@@ -26,7 +27,7 @@ export default function InfoPage() {
                     if(data?.error){
                         console.log(`Error message => ${data?.error}`)
             
-                        router.push('/404')
+                        // router.push('/404')
                     }else{
                         setData(data)
                     }
@@ -45,6 +46,8 @@ export default function InfoPage() {
         </Layout>
     )
 }
+
+export default withRouter(InfoPage)
 
 // export async function getStaticPaths(){
 //     return{
