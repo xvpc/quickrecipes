@@ -5,10 +5,10 @@ It's made using [Themealdb](https://themealdb.com) API.
 
 
 
-#### [quickrecipes.pages.dev](https://quickrecipes.pages.dev)
+#### [https://quickrecipes.pages.dev](https://quickrecipes.pages.dev)
 
 <a href="https://quickrecipes.pages.dev" target="_blank" title="https://quickrecipes.pages.dev">
-    <img src="https://i.ibb.co/zJ8hp32/siteicon.png" width="120" height="120" alt='Site icon'>
+    <img style="background-color: white;" src="https://i.ibb.co/zJ8hp32/siteicon.png" width="120" height="120" alt='Site icon'>
 </a>
 
 
