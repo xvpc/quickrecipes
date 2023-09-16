@@ -56,8 +56,8 @@ export default function InfoPage({ data }: { data : any}) {
 //     }
 // }
 
-export async function getServerSideProps({ params: { id } }: { params: { id: string } }){
-    // const id = context.params?.id as string;
+export async function getServerSideProps(context: GetServerSidePropsContext){
+    const id = context.params?.id as string;
 
     // 
     if(id){
