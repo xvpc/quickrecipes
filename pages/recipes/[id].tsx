@@ -11,13 +11,11 @@ import Info from '@/components/pages/Info'
 // Lib
 import getInfo from '@/lib/getInfo'
 
-// { data }: { data : any}
 export default function InfoPage() {
     const router = useRouter();
-    const [data, setData] = useState<any>(null)
+    const [data, setData] = useState<Record<string, any> | null>(null)
 
     
-    // TODO: Fix this shit
     useEffect(() => {
         const id = router.query?.id;
         
@@ -34,7 +32,7 @@ export default function InfoPage() {
                     if(data?.error){
                         console.log(`Error message => ${data?.error}`)
             
-                        // router.push('/404')
+                        router.push('/404')
                     }else{
                         setData(data)
                     }

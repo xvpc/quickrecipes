@@ -7,7 +7,7 @@ import Instructions from '../sections/Instructions';
 import Video from '../sections/Video';
 
 type InfoProps = {
-    data: Record<string, any>
+    data: Record<string, any> | null
 }
 
 export default function Info({ data }: InfoProps) {
