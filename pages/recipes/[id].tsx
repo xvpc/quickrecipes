@@ -15,27 +15,29 @@ export default function InfoPage() {
     const router = useRouter();
     const [data, setData] = useState<any>(null)
 
+    const id = router.query?.id || "";
+    
     useEffect(() => {
-        const id = router.query?.id || "";
+        if(id){
+            (async() => {
+                try{
+                    const data = await getInfo({id: String(id)})
 
-        (async() => {
-            try{
-                const data = await getInfo({id: String(id)})
-
-                if(data?.error){
-                    console.log(`Error message => ${data?.error}`)
-        
-                    router.push('/404')
-                }else{
-                    setData(data)
+                    if(data?.error){
+                        console.log(`Error message => ${data?.error}`)
+            
+                        router.push('/404')
+                    }else{
+                        setData(data)
+                    }
+                }catch(err: any){
+                    console.log(`Error from useEffect ${err.message}`)
+            
+                    router.push('/')
                 }
-            }catch(err: any){
-                console.log(`Error from useEffect ${err.message}`)
-        
-                router.push('/')
-            }
-        })()
-    }, [])
+            })()
+        }
+    }, [router, id])
     
     return (
         <Layout title=''>
