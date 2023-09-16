@@ -23,7 +23,7 @@ export default function Instructions({ instructions }: InstructionsProps) {
                     initial={{y: "100px", opacity: 0}}
                     whileInView={{y: 0, opacity: 1}}
                     viewport={{once: true}}
-                    transition={{duration: 0.8, delay: 0.5}}
+                    transition={{duration: 0.6, delay: 0.3}}
                     >
                         {instructions}
                     </motion.p>
