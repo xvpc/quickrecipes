@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 // Bootstrap
 import { Form } from 'react-bootstrap'
@@ -16,24 +16,34 @@ import getSearch from '@/lib/getSearch'
 import { motion } from 'framer-motion'
 
 export default function Search() {
-    const [searchValue, setSearchValue] = useState<string | null>(null)
+    // const [searchValue, setSearchValue] = useState<string | null>(null)
     const [searchData, setSearchData] = useState<any | null>(null)
     const [loading, setLoading] = useState<boolean>(false)
 
+    const getSearchData = async(query: string) => {
+        setLoading(true)
+        const data = await getSearch({query: query})
+        if(data){
+            setSearchData(data)
+            // console.log(data)
+        }
+        setLoading(false)
+    }
+
     const handleChange = async(e: any) => {
-        setSearchValue(e.target.value)
-        if(searchValue){
-            setLoading(true)
-            const data = await getSearch({query: searchValue})
-            if(data){
-                setSearchData(data)
-                console.log(data)
-            }
-            setLoading(false)
+        // setSearchValue(e.target.value)
+        if(e.target.value){
+            await getSearchData(e.target.value)
         }else{
             setSearchData(null)
         }
     }
+
+    useEffect(() => {
+        (async() => {
+            await getSearchData("cake")
+        })()
+    }, [])
 
     return (
         <motion.section 
@@ -49,6 +59,7 @@ export default function Search() {
             </div>
             <div className='container px-1 d-flex flex-column justify-contnet-center algin-items-center gap-4'>
                 <Form.Control
+                    defaultValue="cake"
                     onChange={handleChange}
                     style={{maxWidth: 560}}
                     type="search"

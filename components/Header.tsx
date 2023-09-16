@@ -7,23 +7,32 @@ import Link from 'next/link'
 import ImageHolder from '@/lib/ImageHolder'
 
 // Mui
-import { Button } from '@mui/material'
+import { Button, IconButton } from '@mui/material'
+
+// Icons
+import { BsSearch } from "react-icons/bs";
+
+// Assets
+import { iconImage } from '@/utils/assets';
 
 export default function Header() {
 
     return (
-        <header className='container-fluid px-0 bg-black'>
-            <nav className='container py-2 d-flex flex-row flex-wrap justify-content-between align-items-center gap-4'>
-                <div style={{maxWidth: 40, maxHeight: 40}} className='rounded overflow-hidden'>
-                    <ImageHolder img="/images/placeholder2.png" title="Icon" />
+        <header className='container-fluid px-0 bg-dark'>
+            <nav className='container px-0 py-2 d-flex flex-row flex-wrap justify-content-center justify-content-sm-between align-items-center gap-5'>
+                <div style={{maxWidth: 50, maxHeight: 50}} className='rounded overflow-hidden'>
+                    <ImageHolder img={iconImage} title="Icon" />
                 </div>
                 <div className='d-flex flex-row justify-content-center algin-items-center gap-2'>
                     <Link href="/">
-                        <Button className='py-1 px-2' variant="text" color="info">Home</Button>
+                        <Button className='fw-bold' variant="text" color="info">Home</Button>
                     </Link>
                     <Link href="/random">
-                    <Button className='py-1 px-2' variant="text" color="secondary">Random</Button>
+                        <Button className='fw-bold' variant="text" color="secondary">Random</Button>
                     </Link>
+                    {<IconButton href="/#search" title='Go to Search'>
+                        <BsSearch color='white' size={20} />
+                    </IconButton>}
                 </div>
             </nav>
         </header>

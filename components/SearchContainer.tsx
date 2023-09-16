@@ -8,7 +8,7 @@ import ImageHolder from '@/lib/ImageHolder'
 import TextWrap from '@/lib/TextWraper'
 
 // Mui
-import { Button } from '@mui/material'
+import { Button, Tooltip } from '@mui/material'
 
 // Framer motion
 import { motion } from 'framer-motion'
@@ -41,7 +41,11 @@ export default function SearchContainer({ id, name, image, ingredients }:SearchC
                     }
                 </div>
                 <div className='d-flex flex-column justify-content-center algin-items-center gap-2'>
-                    <h3 className='fw-bold text-dark text-capitalize text-wrap text-center' title={name || ""}>{TextWrap(name as string) || "unknown"}</h3>
+                    <Tooltip title={name || ""} arrow>
+                        <h3 className='fw-bold text-dark text-capitalize text-wrap text-center'>
+                            {TextWrap(name as string) || "unknown"}
+                        </h3>
+                    </Tooltip>
                     {
                         ingredients && ingredients.length > 0 &&
                         <ul className='p-0 m-0 ps-2 d-flex flex-column justify-content-start algin-items-center text-start bg-white bg-opacity-50 text-dark'>

@@ -9,7 +9,7 @@ import { apiUrl } from '@/utils/assets';
 // https://www.themealdb.com/api/json/v1/1/random.php
 // random.php
 
-export default async function getInfo() {
+export default async function getRandom() {
     const url = apiUrl + `random.php`;
 
     try{
