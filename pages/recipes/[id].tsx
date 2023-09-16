@@ -22,7 +22,7 @@ export default function InfoPage(props: { data: any }) {
 export async function getStaticPaths(){
     return{
         paths: [],
-        fallback: true
+        fallback: "blocking"
     }
 }
 
