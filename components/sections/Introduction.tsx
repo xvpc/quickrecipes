@@ -39,7 +39,7 @@ export default function Introduction({ title, country, image, home }: Introducti
             className={`order-1 rounded overflow-hidden shadow ${matchSm ? "w-25" : ""} m-auto`}
             initial={{y: "100vh", opacity: 0}}
             animate={{y: 0, opacity: 1}}
-            transition={{duration: 1.1, delay: 1.9}}
+            transition={{duration: 1.1, delay: 1.4}}
             >
                 {
                     home ?
