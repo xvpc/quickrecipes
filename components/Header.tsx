@@ -20,9 +20,9 @@ export default function Header() {
     return (
         <header className='container-fluid px-0 bg-dark'>
             <nav className='container px-0 py-2 d-flex flex-row flex-wrap justify-content-center justify-content-sm-between align-items-center gap-5'>
-                <div style={{maxWidth: 50, maxHeight: 50}} className='rounded overflow-hidden'>
-                    <ImageHolder img={iconImage} title="Icon" />
-                </div>
+                <Link href="/" style={{maxWidth: 40, maxHeight: 40}} className='bg-white rounded overflow-hidden'>
+                    <ImageHolder img={iconImage} title="Site icon" network />
+                </Link>
                 <div className='d-flex flex-row justify-content-center algin-items-center gap-2'>
                     <Link href="/">
                         <Button className='fw-bold' variant="text" color="info">Home</Button>

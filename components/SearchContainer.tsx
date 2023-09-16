@@ -27,7 +27,7 @@ export default function SearchContainer({ id, name, image, ingredients }:SearchC
     return (
         <Link href={`${id ? "/recipes/" + id : "#"}`}>
             <motion.div 
-            className='delaclos-bg h-100 pb-2 d-flex flex-column justify-content-start algin-items-center gap-4 rounded overflow-hidden shadow'
+            className='delaclos-bg h-100 pb-2 d-flex flex-column justify-content-between algin-items-center gap-4 rounded overflow-hidden shadow'
             initial={{y: "100px", opacity: 0}}
             whileInView={{y: 0, opacity: 1}}
             viewport={{once: true}}
@@ -61,7 +61,7 @@ export default function SearchContainer({ id, name, image, ingredients }:SearchC
 
                     <div>
                         <Link href={`${id ? "/recipes/" + id : "#"}`}>
-                            <Button className='text-capitalize py-1 px-2 mt-2' variant="contained" color="primary">
+                            <Button className='text-capitalize py-1 px-2 mt-2' variant="contained" color="success">
                                 View Recipe
                             </Button>
                         </Link>

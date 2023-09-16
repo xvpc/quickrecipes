@@ -6,6 +6,10 @@ import { useRouter } from 'next/router'
 // Lib
 import getRandom from '@/lib/getRandom'
 
+
+// Components
+import Layout from '@/components/Layout'
+
 export default function Random(){
     const router = useRouter()
 
@@ -13,14 +17,16 @@ export default function Random(){
         (async() => {
             const data = await getRandom();
             if(data?.error){
-                router.push(`/recipes/53022`)
+                router.replace(`/`)
             }else{
-                router.push(`/recipes/${data}`)
+                router.replace(`/recipes/${data}`)
             }
         })()
     }, [])
     
     return (
-        <div></div>
+        <Layout>
+            <h1 className='fw-bold text-center'>Loading Recipe..</h1>
+        </Layout>
     )
 }

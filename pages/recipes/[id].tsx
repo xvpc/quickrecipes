@@ -19,13 +19,13 @@ export default function InfoPage() {
     useEffect(() => {
         const id = router.query?.id;
         
-        let times = 1
-        console.log(`${id} => ${times}`)
-        times+=1
+        // let times = 1
+        // console.log(`${id} => ${times}`)
+        // times+=1
         
         if(id){
             (async() => {
-                console.log(`${id} => ${times}`)
+                console.log(`Id => ${id}`)
                 try{
                     const data = await getInfo({id: String(id)})
 

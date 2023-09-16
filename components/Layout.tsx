@@ -9,6 +9,7 @@ import styles from '@/styles/Home.module.css'
 
 // Components
 import Header from '@/components/Header'
+import Footer from './Footer'
 
 // Parallax
 import { ParallaxProvider } from 'react-scroll-parallax'
@@ -47,11 +48,7 @@ export default function Layout({ children, title } : LayoutProps) {
                     </ParallaxProvider>
                 </main>
 
-                <footer className='bg-black container-fluid '>
-                <div className='container d-flex flex-row flex-wrap justify-content-center algin-items-center gap-4'>
-                    <p className='p-0 m-0'>Hello world</p>
-                </div>
-                </footer>
+                <Footer />
             </div>
         </div>
     )

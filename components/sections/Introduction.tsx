@@ -36,7 +36,7 @@ export default function Introduction({ title, country, image, home }: Introducti
         ref={parallax.ref}
         >
             <motion.div 
-            className={`order-1 rounded overflow-hidden shadow ${matchSm ? "w-25" : ""} m-auto`}
+            className={`order-1 rounded overflow-hidden ${home ? "shadow-lg" : "shadow"} ${matchSm ? "w-25" : ""} m-auto`}
             initial={{y: "100vh", opacity: 0}}
             animate={{y: 0, opacity: 1}}
             transition={{duration: 0.8, delay: 1.2}}
