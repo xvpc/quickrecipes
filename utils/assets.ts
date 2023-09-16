@@ -1,0 +1,1 @@
+export const apiUrl: string = process.env.NEXT_PUBLIC_API || "https://www.themealdb.com/api/json/v1/1/";

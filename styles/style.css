@@ -1,0 +1,23 @@
+:root{
+    --main-color: lightblue;
+}
+
+a{ color: inherit !important; text-decoration: none !important; }
+ul{ margin: 0 !important; padding: 0 !important; list-style-type: none !important; }
+
+.remove-selecting{
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.intercom-bg{
+    background-color: #f9fcff;
+    background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
+}
+.delaclos-bg{
+    background-color: #f6f6f6;
+    background-image: linear-gradient(315deg, #f6f6f6 0%, #e9e9e9 74%);
+}
