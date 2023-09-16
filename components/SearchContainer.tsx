@@ -36,7 +36,7 @@ export default function SearchContainer({ id, name, image, ingredients }:SearchC
                 <div className='overflow-hidden'>
                     {
                         image ?
-                        <ImageHolder img={image} title={name || "recipe image"} /> :
+                        <ImageHolder img={image} title={name || "recipe image"} network /> :
                         <ImageHolder img='/images/placeholder2.png' title={name || "placeholder image"} />
                     }
                 </div>
